@@ -1,6 +1,19 @@
 import pytest
 from selene import browser
 from selenium import webdriver
+from selenium import webdriver
+
+capabilities = {
+    "browserName": "chrome",
+    "browserVersion": "100.0",
+    "selenoid:options": {
+        "enableVideo": False
+    }
+}
+
+driver = webdriver.Remote(
+    command_executor="https://selenoid.autotests.cloud/wd/hub",
+    desired_capabilities=capabilities)
 
 
 @pytest.fixture(scope='function', autouse=True)
