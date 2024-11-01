@@ -9,8 +9,8 @@ def test_registration_student(setup_browser):
         registration_student.open('https://demoqa.com/automation-practice-form')
 
     with allure.step('Заполняем форму'):
-        registration_student.fill_first_name('Denis')
-        registration_student.fill_last_name('Galdin')
+        registration_student.fill_first_name('Kris')
+        registration_student.fill_last_name('Abc')
         registration_student.fill_email('abc@ya.ru')
         registration_student.fill_gender()
         registration_student.fill_number('8111111111')
@@ -23,7 +23,7 @@ def test_registration_student(setup_browser):
         registration_student.fill_submit()
 
     with allure.step('Проверяем данные'):
-        registration_student.shoud_have_text('Denis Galdin',
+        registration_student.shoud_have_text('Kris Abc',
                                              'abc@ya.ru',
                                              'Female',
                                              '8111111111',
